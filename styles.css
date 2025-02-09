@@ -345,4 +345,7 @@ footer {
   .footer-links {
     grid-template-columns: 1fr;
   }
+  .footer-column a {
+    display: none;
+  }
 }
