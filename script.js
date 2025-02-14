@@ -178,34 +178,14 @@ function updateCartDisplay() {
   cartTotal.textContent = total.toFixed(2);
 }
 
-// //About Us Form
-// const contactForm = document.getElementById('contact-form');
-
-// contactForm?.addEventListener('submit', function (event) {
-//   // Prevent the form from actually submitting (page reload)
-//   event.preventDefault();
-//   dialogMessageModal.style.display = 'block';
-//   const messageElement = document.getElementById('diglogMessage');
-
-//   // Ensure the user entered a valid email
-//   //if (emailInput.value && emailInput.validity.valid) {
-//   // Show a success message
-//   messageElement.textContent = 'Thank you for your message!';
-//   //} else {
-//   // If the email is invalid, show an error message
-//   //messageElement.textContent = 'Please enter a valid email address.';
-//   //}
-//   setTimeout(() => {
-//     dialogMessageModal.style.display = 'none';
-//   }, 800); // after 0.8 seconds
-// });
 // About Us Form
 const contactForm = document.getElementById('contact-form');
+const dialogMessageModal = document.getElementById('dialogMessageModal');
 
 contactForm?.addEventListener('submit', function (event) {
   // Prevent the form from actually submitting (page reload)
   event.preventDefault();
-  const messageElement = document.getElementById('diglogMessage');
+  const messageElement = document.getElementById('dialogMessage');
   const nameInput = document.getElementById('name');
   const emailInput = document.getElementById('email');
   const phoneInput = document.getElementById('phone');
@@ -257,8 +237,9 @@ contactForm?.addEventListener('submit', function (event) {
     // contactForm.submit();
   } else {
     // If validation fails, show error message
-    alert(errorMessage); // You can use a modal or any other UI element instead
-    messageElement.textContent = 'Please correct the errors and try again.';
+    //alert(errorMessage); //
+    messageElement.innerHTML =
+      'Please correct the errors and try again.<br><br>' + errorMessage;
     messageElement.style.color = 'red';
     dialogMessageModal.style.display = 'block';
   }

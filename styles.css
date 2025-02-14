@@ -262,7 +262,7 @@ header {
   position: relative;
 }
 
-.modal-content-lg-center{
+.modal-content-lg-center {
   min-height: 300px;
   margin: a auto;
   display: flex;
@@ -502,47 +502,35 @@ header {
   border-collapse: collapse;
 }
 
-/* 預設大螢幕樣式 */
+/* Desktop */
 @media (min-width: 769px) {
   .contact-container {
-    flex-direction: row; /* 並排 */
+    flex-direction: row;
   }
   .contact-container > div {
     width: 45%;
   }
 
   .left-section {
-    width: 50%; /* 左邊 Contact + Business Hours */
+    width: 50%;
     display: flex;
-    flex-direction: column; /* 垂直排列 */
+    flex-direction: column;
   }
 
   .right-section {
-    width: 50%; /* 右邊 Contact Form */
+    width: 50%;
   }
 }
 
-/* 手機版 */
+/* Mobile */
 @media (max-width: 768px) {
   .contact-container {
-    flex-direction: column; /* 直排 */
+    flex-direction: column;
   }
 
   .left-section,
   .right-section {
-    width: 100%; /* 每個區塊滿版 */
-  }
-
-  .contact-us {
-    order: 1; /* Contact Us 第一 */
-  }
-
-  .business-hours {
-    order: 3; /* Business Hours 第二 */
-  }
-
-  .contact-form {
-    order: 2; /* Form 第三 */
+    width: 100%;
   }
 }
 
