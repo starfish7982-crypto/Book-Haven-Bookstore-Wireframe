@@ -262,15 +262,6 @@ header {
   position: relative;
 }
 
-.modal-content-lg-center {
-  min-height: 300px;
-  margin: a auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
 .modal-header {
   display: flex;
   justify-content: space-between;

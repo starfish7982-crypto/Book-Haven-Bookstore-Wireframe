@@ -17,22 +17,14 @@ newsForm?.addEventListener('submit', function (event) {
   if (emailInput.value && emailPattern.test(emailInput.value)) {
     emailError.style.display = 'none';
     emailInput.style.removeProperty('border-color');
-    subscribeMessageModal.style.display = 'block';
     // Show a success message
-    messageElement.textContent = 'Thank you for subscribing!';
-    messageElement.style.color = 'green';
-    emailInput.value = '';
+    alert('Thank you for subscribing!');
+    newsForm.reset();
   } else {
     // If the email is invalid, show an error message
-    // messageElement.textContent = 'Please enter a valid email address.';
-    // messageElement.style.color = 'red';
     emailError.style.display = 'block';
     emailInput.style.borderColor = 'red';
   }
-
-  setTimeout(() => {
-    subscribeMessageModal.style.display = 'none';
-  }, 800); // after 0.8 seconds
 });
 
 //Item Added
@@ -42,12 +34,10 @@ const itemAddedModal = document.getElementById('itemAddedModal');
 
 // Show modal when 'Add to Cart' button is clicked
 addToCartButtons?.forEach((button) => {
-  button.addEventListener('click', () => {
-    itemAddedModal.style.display = 'block';
-    // Automatically close
-    setTimeout(() => {
-      itemAddedModal.style.display = 'none';
-    }, 800); // after 0.8 seconds
+  button.addEventListener('click', (e) => {
+    const productCard = e.target.closest('.product-card');
+    const title = productCard.querySelector('h3').textContent;
+    alert('Item added to the cart:' + title);
   });
 });
 
@@ -105,76 +95,44 @@ document.querySelectorAll('.add-to-cart-btn')?.forEach((button) => {
   button.addEventListener('click', (e) => {
     const productCard = e.target.closest('.product-card');
     const title = productCard.querySelector('h3').textContent;
-    const price = 7; // Example price
+    const price = 7; // Price
 
     cart.push({ title, price });
-    sessionStorage.setItem('cartItems', JSON.stringify(cart));
     updateCartDisplay();
   });
 });
 
 // Clear cart
 clearCartBtn?.addEventListener('click', () => {
-  const messageElement = document.getElementById('cartMessage');
-  cartModal.style.display = 'none';
   if (cart.length > 0) {
-    messageElement.textContent = 'Cart cleared!';
+    alert('Cart cleared!');
+    // message = 'Cart cleared!';
   } else {
-    messageElement.textContent = 'No items to clear';
+    alert('No items to clear');
+    // message = 'No items to clear';
   }
-  clearCartModal.style.display = 'block';
   cart = [];
-  sessionStorage.setItem('cartItems', JSON.stringify(cart));
-  setTimeout(() => {
-    clearCartModal.style.display = 'none';
-  }, 800); // after 0.8 seconds
+  updateCartDisplay();
 });
-
-//Item Message display Modal
-const processMessageModal = document.getElementById('processMessageModal');
 
 // Process order
 processOrderBtn?.addEventListener('click', () => {
-  const messageElement = document.getElementById('processMessage');
   if (cart.length > 0) {
-    messageElement.textContent = 'Thank you for your order!';
+    // message = 'Thank you for your order!';
+    alert('Thank you for your order!');
     cart = [];
     updateCartDisplay();
   } else {
-    messageElement.textContent = 'Cart is empty!';
+    alert('Cart is empty!');
+    // message = 'Cart is empty!';
   }
-  cartModal.style.display = 'none';
-  processMessageModal.style.display = 'block';
-  setTimeout(() => {
-    processMessageModal.style.display = 'none';
-  }, 800); // after 0.8 seconds
-});
-
-// Show modal when 'Add to Cart' button is clicked
-function clearCartDisplay() {
-  itemMessageModal.style.display = 'block';
-  // Automatically close
-  setTimeout(() => {
-    itemMessageModal.style.display = 'none';
-  }, 800); // after 0.8 seconds
-}
-
-// Show modal when 'Add to Cart' button is clicked
-addToCartButtons?.forEach((button) => {
-  button.addEventListener('click', () => {
-    itemAddedModal.style.display = 'block';
-    // Automatically close
-    setTimeout(() => {
-      itemAddedModal.style.display = 'none';
-    }, 800); // after 0.8 seconds
-  });
 });
 
 // Update cart display
 function updateCartDisplay() {
   cartItems.innerHTML = '';
   let total = 0;
-
+  sessionStorage.setItem('cartItems', JSON.stringify(cart));
   cart.forEach((item, index) => {
     const itemElement = document.createElement('div');
     itemElement.style.padding = '10px';
@@ -262,7 +220,14 @@ contactForm?.addEventListener('submit', function (event) {
 
   // If all verifications are successful, a success message will be displayed.
   if (isValid) {
-    alert('Thank you for your message!');
+    localStorage.setItem('name', nameInput.value);
+    localStorage.setItem('email', emailInput.value);
+    localStorage.setItem('phone', phoneInput.value);
+    localStorage.setItem('feedback', feedbackInput.value);
+
+    alert('Thank you for your message.' + nameInput.value + '!');
     contactForm.reset();
+  } else {
+    alert('Please enter your name, email and feedback!');
   }
 });
