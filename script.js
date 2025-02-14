@@ -32,7 +32,7 @@ newsForm?.addEventListener('submit', function (event) {
 
   setTimeout(() => {
     subscribeMessageModal.style.display = 'none';
-  }, 7000); // after 7 seconds
+  }, 800); // after 0.8 seconds
 });
 
 //Item Added
@@ -47,7 +47,7 @@ addToCartButtons?.forEach((button) => {
     // Automatically close
     setTimeout(() => {
       itemAddedModal.style.display = 'none';
-    }, 7000); // after 0.8 seconds
+    }, 800); // after 0.8 seconds
   });
 });
 
@@ -127,7 +127,7 @@ clearCartBtn?.addEventListener('click', () => {
   sessionStorage.setItem('cartItems', JSON.stringify(cart));
   setTimeout(() => {
     clearCartModal.style.display = 'none';
-  }, 7000); // after 0.8 seconds
+  }, 800); // after 0.8 seconds
 });
 
 //Item Message display Modal
@@ -137,17 +137,17 @@ const processMessageModal = document.getElementById('processMessageModal');
 processOrderBtn?.addEventListener('click', () => {
   const messageElement = document.getElementById('processMessage');
   if (cart.length > 0) {
-    messageElement.textContent = 'Order processed successfully!';
+    messageElement.textContent = 'Thank you for your order!';
     cart = [];
     updateCartDisplay();
   } else {
-    messageElement.textContent = 'Your cart is empty!';
+    messageElement.textContent = 'Cart is empty!';
   }
   cartModal.style.display = 'none';
   processMessageModal.style.display = 'block';
   setTimeout(() => {
     processMessageModal.style.display = 'none';
-  }, 7000); // after 0.8 seconds
+  }, 800); // after 0.8 seconds
 });
 
 // Show modal when 'Add to Cart' button is clicked
@@ -156,7 +156,7 @@ function clearCartDisplay() {
   // Automatically close
   setTimeout(() => {
     itemMessageModal.style.display = 'none';
-  }, 7000); // after 0.8 seconds
+  }, 800); // after 0.8 seconds
 }
 
 // Show modal when 'Add to Cart' button is clicked
@@ -166,7 +166,7 @@ addToCartButtons?.forEach((button) => {
     // Automatically close
     setTimeout(() => {
       itemAddedModal.style.display = 'none';
-    }, 7000); // after 0.8 seconds
+    }, 800); // after 0.8 seconds
   });
 });
 
@@ -258,5 +258,5 @@ contactForm?.addEventListener('submit', function (event) {
 
   setTimeout(() => {
     dialogMessageModal.style.display = 'none';
-  }, 7000); // after 0.8 seconds
+  }, 800); // after 0.8 seconds
 });
