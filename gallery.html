@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>COMPANY NAME - Your Online Bookstore</title>
+    <title>Book Haven Bookstore - Your Online Bookstore</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
@@ -14,15 +14,24 @@
   <body>
     <header>
       <nav class="desktop-nav">
-        <div class="nav-left">
-          <h1>COMPANY NAME</h1>
-          <div class="logo-space">
-            <img src="https://placehold.co/200x50" alt="COMPANY NAME Logo" />
+        <a
+          href="/home.html"
+          style="text-decoration: none; color: inherit; cursor: pointer"
+        >
+          <div class="nav-left">
+            <h1>Book Haven Bookstore</h1>
+            <div class="logo-space">
+              <img
+                src="./assets/Client3_LogoPalette2_3E5641.png"
+                alt="Book Haven Bookstore Logo"
+              />
+            </div>
           </div>
-        </div>
+        </a>
+
         <div class="nav-right">
           <div class="nav-links nav-right">
-            <a href="/" class="nav-link">Home</a>
+            <a href="/home.html" class="nav-link">Home</a>
             <a href="/about_us.html" class="nav-link">About Us</a>
             <a href="/gallery.html" class="nav-link">Gallery</a>
             <a href="/event.html" class="nav-link">Event</a>
@@ -39,118 +48,230 @@
           </div>
         </div>
       </nav>
+      <nav class="navbar-mobile">
+        <a
+          href="/home.html"
+          style="text-decoration: none; color: inherit; cursor: pointer"
+        >
+          <div class="nav-left">
+            <div class="logo-space">
+              <img
+                src="./assets/Client3_LogoPalette2_3E5641.png"
+                alt="Book Haven Bookstore Logo"
+              />
+            </div>
+          </div>
+        </a>
+
+        <h2>Book Haven Bookstore</h2>
+        <div class="nav-right">
+          <button class="navbar-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="nav-menu">
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="/about_us.html">About Us</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/event.html">Event</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <main>
-      <h3 class="gallery-heading">Gallery Page Heading</h3>
+      <h3 class="gallery-heading">Our Bookstore Collection</h3>
       <div class="gallery-container">
         <div class="gallery-header">
-          <p class="subheading">Subheading</p>
-          <div class="shopping-cart">
+          <p class="subheading">
+            Explore a variety of books, magazines, and unique items to enhance
+            your reading experience.
+          </p>
+          <div id="viewCartBtn" class="shopping-cart">
             <i class="fas fa-shopping-cart"></i>
             <button class="cart-btn">View Shopping Cart</button>
           </div>
         </div>
 
-        <div class="product-grid">
-          <div class="product-card">
-            <div class="product-image">
-              <img src="https://placehold.co/200x200" alt="Product 1" />
-            </div>
-            <div class="product-info">
-              <h3>Title</h3>
-              <p>Body text for product description.</p>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
+        <table class="product-table">
+          <tr>
+            <td>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/Client3_Book1.png" alt="Product 1" />
+                </div>
+                <div class="product-info">
+                  <h3>Brie Mine 4Ever</h3>
+                  <p>A book for cheese lovers.</p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/Client3_Book2.png" alt="Product 2" />
+                </div>
+                <div class="product-info">
+                  <h3>Glory Riders</h3>
+                  <p>A book about bikers.</p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/Client3_Book3.png" alt="Product 3" />
+                </div>
+                <div class="product-info">
+                  <h3>Sorcerer's Shadowed Chronicles</h3>
+                  <p>A fantasy book.</p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/Client3_Magazine1.png" alt="Product 4" />
+                </div>
+                <div class="product-info">
+                  <h3>Ball</h3>
+                  <p>A magazine about pickleball.</p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/Client3_Magazine2.png" alt="Product 5" />
+                </div>
+                <div class="product-info">
+                  <h3>Travel</h3>
+                  <p>A magazine for travelers.</p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/Client3_Magazine3.png" alt="Product 6" />
+                </div>
+                <div class="product-info">
+                  <h3>Eat</h3>
+                  <p>A magazine for foodies</p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/Client3_Notebook.png" alt="Product 7" />
+                </div>
+                <div class="product-info">
+                  <h3>Tote Bag</h3>
+                  <p>
+                    A canvas tote bag with black lettering that says ALL I DO IS
+                    READ READ READ.
+                  </p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/Client3_Stickers.png" alt="Product 8" />
+                </div>
+                <div class="product-info">
+                  <h3>Book Haven Bookstore stickers</h3>
+                  <p>
+                    A set of four Book Haven Bookstore stickers that promote
+                    reading.
+                  </p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="./assets/Client3_ToteBag.png" alt="Product 9" />
+                </div>
+                <div class="product-info">
+                  <h3>Notebook</h3>
+                  <p>
+                    A notebook with text on the cover that says Book Haven
+                    Bookstore.
+                  </p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
 
-          <div class="product-card">
-            <div class="product-image">
-              <img src="https://placehold.co/200x200" alt="Product 2" />
+      <!-- Shopping Cart Modal -->
+      <div role="dialog" id="cartModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Shopping Cart</h2>
+            <span aria-label="close" class="close">&times;</span>
+          </div>
+          <div class="modal-body">
+            <div id="cartItems">
+              <!-- Cart items will be dynamically added here -->
             </div>
-            <div class="product-info">
-              <h3>Title</h3>
-              <p>Body text for product description.</p>
-              <button class="add-to-cart-btn">Add to Cart</button>
+            <div class="cart-total">
+              <p>Total: $<span id="cartTotal">0.00</span></p>
             </div>
           </div>
+          <div class="modal-footer">
+            <button id="clearCartBtn" class="modal-btn">Clear Cart</button>
+            <button id="processOrderBtn" class="modal-btn">
+              Process Order
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Item Added -->
+      <div id="itemAddedModal" class="modal">
+        <div class="modal-content modal-content-lg-center">
+          <div class="modal-header"></div>
+          <div class="modal-body">
+            <h2>Item Added</h2>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
 
-          <div class="product-card">
-            <div class="product-image">
-              <img src="https://placehold.co/200x200" alt="Product 3" />
-            </div>
-            <div class="product-info">
-              <h3>Title</h3>
-              <p>Body text for product description.</p>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
+      <!-- Process -->
+      <div id="processMessageModal" class="modal">
+        <div class="modal-content modal-content-lg-center">
+          <div class="modal-header"></div>
+          <div class="modal-body">
+            <h2 id="processMessage"></h2>
           </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
 
-          <div class="product-card">
-            <div class="product-image">
-              <img src="https://placehold.co/200x200" alt="Product 4" />
-            </div>
-            <div class="product-info">
-              <h3>Title</h3>
-              <p>Body text for product description.</p>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
+      <!-- Clear cart -->
+      <div id="clearCartModal" class="modal">
+        <div class="modal-content modal-content-lg-center">
+          <div class="modal-header"></div>
+          <div class="modal-body">
+            <h2 id="cartMessage">Cart cleared!</h2>
           </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img src="https://placehold.co/200x200" alt="Product 5" />
-            </div>
-            <div class="product-info">
-              <h3>Title</h3>
-              <p>Body text for product description.</p>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img src="https://placehold.co/200x200" alt="Product 6" />
-            </div>
-            <div class="product-info">
-              <h3>Title</h3>
-              <p>Body text for product description.</p>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img src="https://placehold.co/200x200" alt="Product 7" />
-            </div>
-            <div class="product-info">
-              <h3>Title</h3>
-              <p>Body text for product description.</p>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img src="https://placehold.co/200x200" alt="Product 8" />
-            </div>
-            <div class="product-info">
-              <h3>Title</h3>
-              <p>Body text for product description.</p>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img src="https://placehold.co/200x200" alt="Product 9" />
-            </div>
-            <div class="product-info">
-              <h3>Title</h3>
-              <p>Body text for product description.</p>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
+          <div class="modal-footer"></div>
         </div>
       </div>
 
@@ -164,12 +285,35 @@
         </div>
       </section>
 
+      <!-- Subscribe -->
+      <div id="subscribeMessageModal" class="modal">
+        <div class="modal-content modal-content-lg-center">
+          <div class="modal-header"></div>
+          <div class="modal-body">
+            <h2 id="subscribeMessage"></h2>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+
       <section class="newsletter">
         <h2>Follow the latest trends</h2>
         <p>With our daily newsletter</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="you@example.com" />
-          <button type="submit">Submit</button>
+        <form
+          id="newsletter-form"
+          class="newsletter-form"
+          aria-labelledby="newsletter-heading"
+        >
+          <input
+            id="email-input"
+            type="email"
+            placeholder="you@example.com"
+            aria-required="true"
+            aria-invalid="false"
+            aria-describedby="email-help"
+            tabindex="0"
+          />
+          <button type="submit" tabindex="0">Submit</button>
         </form>
       </section>
     </main>
@@ -177,7 +321,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <h2>COMPANY NAME</h2>
+          <h2>Book Haven Bookstore</h2>
           <p>© 2010 - 2023</p>
           <p>Privacy - Terms</p>
         </div>
