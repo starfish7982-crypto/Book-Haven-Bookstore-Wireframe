@@ -502,6 +502,17 @@ header {
   border-collapse: collapse;
 }
 
+.error-message {
+  color: red;
+  font-size: 0.875em;
+  display: none;
+  margin-top: 4px;
+}
+input.error,
+textarea.error {
+  border-color: red;
+}
+
 /* Desktop */
 @media (min-width: 769px) {
   .contact-container {

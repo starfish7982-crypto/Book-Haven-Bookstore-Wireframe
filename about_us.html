@@ -131,22 +131,28 @@
         <div class="right-section">
           <div class="contact-form">
             <form id="contact-form">
-              <div class="form-group">
+            
+                  <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Value" aria-required="true" aria-invalid="false" tabindex="0"/>
+                <input type="text" id="name" placeholder="Value" aria-required="true" aria-invalid="false" tabindex="0" />
+                <span class="error-message" id="name-error"></span>
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Value" aria-required="true" aria-invalid="false" tabindex="0" />
+                <span class="error-message" id="contact-email-error"></span>
               </div>
               <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="Value" aria-required="true" aria-invalid="false" tabindex="0"/>
+                <input type="tel" id="phone" placeholder="Value" aria-required="true" aria-invalid="false" tabindex="0" />
+                <span class="error-message" id="phone-error"></span>
               </div>
               <div class="form-group">
                 <label for="feedback">Feedback/Order Information</label>
                 <textarea id="feedback" placeholder="Value" aria-required="true" aria-invalid="false" tabindex="0"></textarea>
+                <span class="error-message" id="feedback-error"></span>
               </div>
+          
               <button type="submit" class="submit-btn" tabindex="0">Submit</button>
             </form>
           </div>

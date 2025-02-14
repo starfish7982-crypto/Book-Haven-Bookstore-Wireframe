@@ -190,73 +190,79 @@ function updateCartDisplay() {
   cartTotal.textContent = total.toFixed(2);
 }
 
-// About Us Form
 const contactForm = document.getElementById('contact-form');
-const dialogMessageModal = document.getElementById('dialogMessageModal');
 
 contactForm?.addEventListener('submit', function (event) {
-  // Prevent the form from actually submitting (page reload)
   event.preventDefault();
-  const messageElement = document.getElementById('dialogMessage');
+
   const nameInput = document.getElementById('name');
   const emailInput = document.getElementById('email');
   const phoneInput = document.getElementById('phone');
   const feedbackInput = document.getElementById('feedback');
 
-  // Regular expressions for validation
+  // Error message area
+  const nameError = document.getElementById('name-error');
+  const emailError = document.getElementById('contact-email-error');
+  const phoneError = document.getElementById('phone-error');
+  const feedbackError = document.getElementById('feedback-error');
+
+  // Regular Expressions
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const phonePattern = /^[0-9]+$/;
 
-  // Validation flags
-  let isValid = true;
-  let errorMessage = '';
+  // Reset Error Message
+  nameError.textContent = '';
+  emailError.textContent = '';
+  phoneError.textContent = '';
+  feedbackError.textContent = '';
+  nameInput.classList.remove('error');
+  emailInput.classList.remove('error');
+  phoneInput.classList.remove('error');
+  feedbackInput.classList.remove('error');
 
-  // Validate Name (not empty)
+  // Verification Flag
+  let isValid = true;
+
+  // Verify Name (cannot be empty)
   if (!nameInput.value.trim()) {
-    errorMessage += 'Name is required.\n';
+    nameError.textContent = 'Name is required.';
+    nameError.style.display = 'block';
+    nameInput.classList.add('error');
     isValid = false;
   }
 
-  // Validate Email (not empty and valid format)
+  // Verify Email (cannot be empty and must be in correct format)
   if (!emailInput.value.trim()) {
-    errorMessage += 'Email is required.\n';
+    emailError.textContent = 'Email is required.';
+    emailError.style.display = 'block';
+    emailInput.classList.add('error');
     isValid = false;
   } else if (!emailPattern.test(emailInput.value)) {
-    errorMessage += 'Please enter a valid email address.\n';
+    emailError.textContent = 'Please enter a valid email address.';
+    emailError.style.display = 'block';
+    emailInput.classList.add('error');
     isValid = false;
   }
 
-  // Validate Phone (optional but must be numbers if filled)
+  // Verify Phone (optional, but must be a number if entered)
   if (phoneInput.value.trim() && !phonePattern.test(phoneInput.value)) {
-    errorMessage += 'Phone number must contain only numbers.\n';
+    phoneError.textContent = 'Phone number must contain only numbers.';
+    phoneError.style.display = 'block';
+    phoneInput.classList.add('error');
     isValid = false;
   }
 
-  // Validate Feedback (not empty)
+  // Verify Feedback (cannot be empty)
   if (!feedbackInput.value.trim()) {
-    errorMessage += 'Feedback is required.\n';
+    feedbackError.textContent = 'Feedback is required.';
+    feedbackError.style.display = 'block';
+    feedbackInput.classList.add('error');
     isValid = false;
   }
 
-  // Display validation result
+  // If all verifications are successful, a success message will be displayed.
   if (isValid) {
-    // If all validations pass, show success mesage
-    messageElement.textContent = 'Thank you for your message!';
-    messageElement.style.color = 'green';
-    dialogMessageModal.style.display = 'block';
-
-    // You can submit the form programmatically here if needed
-    // contactForm.submit();
-  } else {
-    // If validation fails, show error message
-    //alert(errorMessage); //
-    messageElement.innerHTML =
-      'Please correct the errors and try again.<br><br>' + errorMessage;
-    messageElement.style.color = 'red';
-    dialogMessageModal.style.display = 'block';
+    alert('Thank you for your message!');
+    contactForm.reset();
   }
-
-  setTimeout(() => {
-    dialogMessageModal.style.display = 'none';
-  }, 800); // after 0.8 seconds
 });
