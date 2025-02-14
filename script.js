@@ -1,26 +1,38 @@
 //News Subscribing
 const newsForm = document.getElementById('newsletter-form');
 const emailInput = document.getElementById('email-input');
+const emailError = document.getElementById('email-error');
 const subscribeMessageModal = document.getElementById('subscribeMessageModal');
 
 // Listen for the form submit event
 newsForm?.addEventListener('submit', function (event) {
   // Prevent the form from actually submitting (page reload)
   event.preventDefault();
-  subscribeMessageModal.style.display = 'block';
   const messageElement = document.getElementById('subscribeMessage');
 
+  // Regular Expression for Email Validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   // Ensure the user entered a valid email
-  if (emailInput.value && emailInput.validity.valid) {
+  if (emailInput.value && emailPattern.test(emailInput.value)) {
+    emailError.style.display = 'none';
+    emailInput.style.removeProperty('border-color');
+    subscribeMessageModal.style.display = 'block';
     // Show a success message
     messageElement.textContent = 'Thank you for subscribing!';
+    messageElement.style.color = 'green';
+    emailInput.value = '';
   } else {
     // If the email is invalid, show an error message
-    messageElement.textContent = 'Please enter a valid email address.';
+    // messageElement.textContent = 'Please enter a valid email address.';
+    // messageElement.style.color = 'red';
+    emailError.style.display = 'block';
+    emailInput.style.borderColor = 'red';
   }
+
   setTimeout(() => {
     subscribeMessageModal.style.display = 'none';
-  }, 800); // after 0.8 seconds
+  }, 7000); // after 7 seconds
 });
 
 //Item Added
@@ -35,7 +47,7 @@ addToCartButtons?.forEach((button) => {
     // Automatically close
     setTimeout(() => {
       itemAddedModal.style.display = 'none';
-    }, 800); // after 0.8 seconds
+    }, 7000); // after 0.8 seconds
   });
 });
 
@@ -115,7 +127,7 @@ clearCartBtn?.addEventListener('click', () => {
   sessionStorage.setItem('cartItems', JSON.stringify(cart));
   setTimeout(() => {
     clearCartModal.style.display = 'none';
-  }, 800); // after 0.8 seconds
+  }, 7000); // after 0.8 seconds
 });
 
 //Item Message display Modal
@@ -135,7 +147,7 @@ processOrderBtn?.addEventListener('click', () => {
   processMessageModal.style.display = 'block';
   setTimeout(() => {
     processMessageModal.style.display = 'none';
-  }, 800); // after 0.8 seconds
+  }, 7000); // after 0.8 seconds
 });
 
 // Show modal when 'Add to Cart' button is clicked
@@ -144,7 +156,7 @@ function clearCartDisplay() {
   // Automatically close
   setTimeout(() => {
     itemMessageModal.style.display = 'none';
-  }, 800); // after 0.8 seconds
+  }, 7000); // after 0.8 seconds
 }
 
 // Show modal when 'Add to Cart' button is clicked
@@ -154,7 +166,7 @@ addToCartButtons?.forEach((button) => {
     // Automatically close
     setTimeout(() => {
       itemAddedModal.style.display = 'none';
-    }, 800); // after 0.8 seconds
+    }, 7000); // after 0.8 seconds
   });
 });
 
@@ -246,5 +258,5 @@ contactForm?.addEventListener('submit', function (event) {
 
   setTimeout(() => {
     dialogMessageModal.style.display = 'none';
-  }, 800); // after 0.8 seconds
+  }, 7000); // after 0.8 seconds
 });

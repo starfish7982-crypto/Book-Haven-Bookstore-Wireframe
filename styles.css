@@ -845,6 +845,15 @@ header {
   cursor: pointer;
 }
 
+#email-error {
+  color: red;
+  display: none;
+  font-size: 0.9em;
+  width: 27%;
+  margin: 0 auto;
+  text-align: start;
+}
+
 /* Footer */
 footer {
   color: #c1cfd6;
