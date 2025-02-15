@@ -49,9 +49,11 @@ window.addEventListener('click', (event) => {
 });
 
 // Toggle mobile menu
-document.querySelector('.menu-toggle')?.addEventListener('click', () => {
-  // Add mobile menu functionality here
-  console.log('Menu toggle clicked');
+const toggleButton = document.querySelector('.navbar-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+toggleButton.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
 });
 
 // Search functionality

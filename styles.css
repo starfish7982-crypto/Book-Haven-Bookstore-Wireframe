@@ -159,15 +159,15 @@ header {
 }
 
 .navbar-mobile {
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
   background-color: #3e5641;
   color: #c1cfd6;
+  width: 100%;
+  position: relative;
 }
 
-.navbar-mobile h1 {
+.navbar-mobile h2 {
   text-align: center;
 }
 
@@ -176,41 +176,45 @@ header {
   height: auto;
 }
 
-.navbar-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
+.nav-container {
+  width: 100%;
+  position: relative;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
 .nav-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: none;
   flex-direction: column;
   background-color: #3e5641;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  width: 150px;
-  border-radius: 5px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.nav-menu li {
+.nav-menu.active {
+  display: flex;
+}
+
+.nav-menu div {
   border-bottom: 1px solid #2f4232;
-}
-
-.nav-menu li:last-child {
-  border-bottom: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-menu a {
   color: white;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 10px;
   display: block;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-menu a:hover {
@@ -220,6 +224,7 @@ header {
 @media (max-width: 768px) {
   .navbar-toggle {
     display: block;
+    cursor: pointer;
   }
 
   .nav-menu {
@@ -227,7 +232,7 @@ header {
   }
 
   .nav-menu.active {
-    display: flex;
+    display: block;
   }
   .desktop-nav {
     display: none;
@@ -313,29 +318,6 @@ header {
   background-color: #444;
 }
 
-@media (max-width: 768px) {
-  .navbar-toggle {
-    display: block;
-  }
-
-  .nav-menu {
-    display: none;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-  .desktop-nav {
-    display: none;
-  }
-}
-
-@media (min-width: 769px) {
-  .navbar-mobile {
-    display: none;
-  }
-}
-
 /* Gallery Page Styles */
 .gallery-heading {
   display: flex;
@@ -406,6 +388,7 @@ header {
   border-radius: 4px;
   overflow: hidden;
   height: 100%;
+  min-height: 435px;
 }
 
 .product-image {
