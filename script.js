@@ -134,7 +134,11 @@ processOrderBtn?.addEventListener('click', () => {
 function updateCartDisplay() {
   cartItems.innerHTML = '';
   let total = 0;
-  sessionStorage.setItem('cartItems', JSON.stringify(cart));
+  if (cart.length > 0) {
+    sessionStorage.setItem('cartItems', JSON.stringify(cart));
+  } else {
+    sessionStorage.removeItem('cartItems');
+  }
   cart.forEach((item, index) => {
     const itemElement = document.createElement('div');
     itemElement.style.padding = '10px';
@@ -222,12 +226,18 @@ contactForm?.addEventListener('submit', function (event) {
 
   // If all verifications are successful, a success message will be displayed.
   if (isValid) {
-    localStorage.setItem('name', nameInput.value);
-    localStorage.setItem('email', emailInput.value);
-    localStorage.setItem('phone', phoneInput.value);
-    localStorage.setItem('feedback', feedbackInput.value);
+    const customerInfo = {
+      name: nameInput.value,
+      email: emailInput.value,
+      phone: phoneInput.value,
+      feedback: feedbackInput.value,
+    };
 
-    alert('Thank you for your message.' + nameInput.value + '!');
+    const keyValue = nameInput.value;
+
+    localStorage.setItem(keyValue, JSON.stringify(customerInfo));
+    const who = JSON.parse(localStorage.getItem(keyValue));
+    alert('Thank you for your message, ' + who.name + '!');
     contactForm.reset();
   } else {
     alert('Please enter your name, email and feedback!');
