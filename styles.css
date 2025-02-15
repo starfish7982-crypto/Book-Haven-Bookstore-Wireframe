@@ -220,6 +220,9 @@ header {
 .nav-menu a:hover {
   background-color: #2f4232;
 }
+.nav-links a:hover {
+  color: #131c26;
+}
 
 @media (max-width: 768px) {
   .navbar-toggle {
@@ -363,6 +366,10 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.cart-btn:hover {
+  background: #444;
 }
 
 .cart-btn i {
@@ -597,7 +604,7 @@ textarea.error {
 }
 
 .submit-btn:hover {
-  background: #2e2e4e;
+  background: #444;
 }
 
 /* Event Page Styles */
@@ -675,7 +682,7 @@ textarea.error {
 }
 
 .view-details-btn:hover {
-  background: #ddd;
+  background: #444;
 }
 
 /* Hero section */
@@ -702,6 +709,10 @@ textarea.error {
   border-radius: 4px;
   margin-top: 1.5rem;
   cursor: pointer;
+}
+
+.shop-now-btn:hover {
+  background: #444;
 }
 
 /* Value Proposition */
@@ -779,6 +790,7 @@ textarea.error {
 .trusted-companies {
   padding: 4rem 1rem;
   text-align: center;
+  background: #f2f2f2;
 }
 
 .social-links {
@@ -830,6 +842,10 @@ textarea.error {
   cursor: pointer;
 }
 
+.newsletter-form-submit:hover {
+  background: #444;
+}
+
 #email-error {
   color: red;
   display: none;
@@ -870,6 +886,7 @@ footer {
 .footer-column h3 {
   margin-bottom: 1rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .footer-column a {
@@ -877,6 +894,14 @@ footer {
   color: #c1cfd6;
   text-decoration: none;
   margin-bottom: 0.5rem;
+}
+
+.footer-column h3:hover {
+  color: #131c26;
+}
+
+.footer-column a:hover {
+  color: #131c26;
 }
 
 /* Responsive Design */
